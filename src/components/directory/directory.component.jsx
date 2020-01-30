@@ -35,14 +35,27 @@ class Directory extends Component {
         size: "large",
         id: 5,
         linkUrl: "shop/mens"
+      },
+      {
+        title: "babies",
+        imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+        id: 6,
+        linkUrl: "shop/mens"
+      },
+      {
+        title: "kids",
+        imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+        size: "large",
+        id: 7,
+        linkUrl: "shop/mens"
       }
     ]
   };
   render() {
     return (
       <div className="directory-menu">
-        {this.state.sections.map(({ title, imageUrl, size, id, linkUrl }) => (
-          <MenuItem key={id} title={title} imageUrl={imageUrl} size={size} />
+        {this.state.sections.map(({ id, ...otherSectionProps }) => (
+          <MenuItem key={id} {...otherSectionProps} />
         ))}
       </div>
     );
